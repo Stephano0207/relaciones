@@ -23,6 +23,11 @@ class User extends Authenticatable
         'password',
     ];
 
+
+    public function phone(){
+        // return $this->hasOne(Phone::class);
+        return $this->morphOne(Phone::class,"phoneable");
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -42,4 +47,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
 }
