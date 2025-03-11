@@ -9,8 +9,17 @@ class Phone extends Model
 {
     use HasFactory;
     protected $table="phones";
-    protected $fillable=["number","phoneable_id","phoneable_type"];
+    protected $fillable=
+    [
+        "number"
+        ,"phoneable_id"
+        ,"phoneable_type"
+    ];
 
+        // Relacion inversa polimorfica de uno a uno
+    public function phoneable(){
+        return $this->morphTo();
+    }
 
     //Relacion inversa
 
@@ -19,7 +28,7 @@ class Phone extends Model
     // }
 
 
-    public function phoneable(){
-        return $this->morphTo();
-    }
+
+
+
 }

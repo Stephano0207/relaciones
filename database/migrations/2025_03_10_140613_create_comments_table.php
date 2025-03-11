@@ -16,11 +16,12 @@ return new class extends Migration
 
             $table->string("content");
 
-            $table
-            ->foreignId("post_id")
-            ->constrained()
-            ->onDelete("cascade");
+            $table->morphs("commentable");
 
+            // $table
+            // ->foreignId("post_id")
+            // ->constrained()
+            // ->onDelete("cascade");
             $table->timestamps();
         });
     }

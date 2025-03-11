@@ -25,8 +25,12 @@ class User extends Authenticatable
 
 
     public function phone(){
+        //Relacion de uno a uno normal
         // return $this->hasOne(Phone::class);
+
+        //Relacion de uno a uno polimorfica
         return $this->morphOne(Phone::class,"phoneable");
+
     }
     /**
      * The attributes that should be hidden for serialization.

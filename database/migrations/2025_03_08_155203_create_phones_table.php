@@ -31,7 +31,7 @@ return new class extends Migration
             // ;
 
 
-            $table->morphs("phoneable");
+            $table->morphs("phoneable");// se crea una relacion polimorfica de uno a uno
 
             $table->timestamps();
         });
